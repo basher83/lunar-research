@@ -1,4 +1,5 @@
 ---
+name: lunar-research
 description: Research implementations, patterns, and best practices across multiple sources
 allowed-tools: Task, Read, Write, Edit, Glob, Grep
 argument-hint: [query]
@@ -92,7 +93,7 @@ Output: `Dispatching 4 researcher agents...`
 
 4. **After each completes:**
    - Check that the report file exists in the cache directory
-   - Validate it: `uv run ${CLAUDE_PLUGIN_ROOT}/scripts/validate_research_report.py [report-path]`
+   - Validate it: `uv run ${CLAUDE_PLUGIN_ROOT}/scripts/validate-research-report.py [report-path]`
    - If valid: Output `[agent name] report valid`
    - If invalid: Mark researcher as failed, show validation errors, exclude from synthesis
 

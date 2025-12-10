@@ -48,7 +48,7 @@ Output: `Dispatching 4 researcher agents...`
    Use the Task tool 4 times in ONE message. For each researcher:
 
    **GitHub Researcher:**
-   - `subagent_type`: `github-researcher`
+   - `subagent_type`: `lunar-research:github-researcher`
    - `description`: `GitHub research for [query]`
    - `prompt`:
 
@@ -59,7 +59,7 @@ Output: `Dispatching 4 researcher agents...`
      ```
 
    **Tavily Researcher:**
-   - `subagent_type`: `tavily-researcher`
+   - `subagent_type`: `lunar-research:tavily-researcher`
    - `description`: `Tavily research for [query]`
    - `prompt`:
 
@@ -70,7 +70,7 @@ Output: `Dispatching 4 researcher agents...`
      ```
 
    **DeepWiki Researcher:**
-   - `subagent_type`: `deepwiki-researcher`
+   - `subagent_type`: `lunar-research:deepwiki-researcher`
    - `description`: `DeepWiki research for [query]`
    - `prompt`:
 
@@ -81,7 +81,7 @@ Output: `Dispatching 4 researcher agents...`
      ```
 
    **Exa Researcher:**
-   - `subagent_type`: `exa-researcher`
+   - `subagent_type`: `lunar-research:exa-researcher`
    - `description`: `Exa research for [query]`
    - `prompt`:
 
@@ -102,7 +102,7 @@ Output: `Dispatching 4 researcher agents...`
 Output: `Synthesizing findings...`
 
 1. Dispatch the synthesizer agent:
-   - `subagent_type`: `synthesizer-agent`
+   - `subagent_type`: `lunar-research:synthesizer-agent`
    - `description`: `Synthesize research for [query]`
    - `prompt`:
 
@@ -147,11 +147,11 @@ Output: `Adding codebase context...`
 
 The following subagent types are provided by this plugin in `${CLAUDE_PLUGIN_ROOT}/agents/`:
 
-- `github-researcher` -> `github-agent.md`
-- `tavily-researcher` -> `tavily-agent.md`
-- `deepwiki-researcher` -> `deepwiki-agent.md`
-- `exa-researcher` -> `exa-agent.md`
-- `synthesizer-agent` -> `synthesizer-agent.md`
+- `lunar-research:github-researcher` -> `github-agent.md`
+- `lunar-research:tavily-researcher` -> `tavily-agent.md`
+- `lunar-research:deepwiki-researcher` -> `deepwiki-agent.md`
+- `lunar-research:exa-researcher` -> `exa-agent.md`
+- `lunar-research:synthesizer-agent` -> `synthesizer-agent.md`
 
 ## Orchestration Rules
 

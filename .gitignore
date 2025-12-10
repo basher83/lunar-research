@@ -205,3 +205,7 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Plugin cache (query results)
+# Keep index.json but ignore per-query directories
+cache/*/

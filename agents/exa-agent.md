@@ -1,6 +1,8 @@
 ---
 name: exa-researcher
 description: Semantic search for conceptually related content
+model: inherit
+color: magenta
 tools: mcp__exa__web_search_exa, mcp__exa__get_code_context_exa, mcp__exa__crawling_exa, Read, Write, Edit
 capabilities:
   - Semantic web search for conceptually related content

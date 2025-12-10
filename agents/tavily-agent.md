@@ -1,6 +1,8 @@
 ---
 name: tavily-researcher
 description: Find blog posts, tutorials, and community content
+model: inherit
+color: cyan
 tools: mcp__tavily__tavily_search, mcp__tavily__tavily_extract, mcp__tavily__tavily_crawl, Read, Write, Edit
 capabilities:
   - Search web for tutorials and how-to articles

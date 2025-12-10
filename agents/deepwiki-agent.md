@@ -1,8 +1,9 @@
 ---
 name: deepwiki-researcher
 description: Find official documentation and project architecture
-tools: mcp__deepwiki__read_wiki_structure, mcp__deepwiki__read_wiki_contents,
-  mcp__deepwiki__ask_question, Read, Write, Edit
+model: inherit
+color: green
+tools: mcp__deepwiki__read_wiki_structure, mcp__deepwiki__read_wiki_contents, mcp__deepwiki__ask_question, Read, Write, Edit
 capabilities:
   - Query indexed repository documentation
   - Extract official API references and guides

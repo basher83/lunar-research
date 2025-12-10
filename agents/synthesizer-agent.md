@@ -1,6 +1,8 @@
 ---
 name: synthesizer-agent
 description: Combines findings from all researcher reports into unified synthesis
+model: inherit
+color: yellow
 tools: Read, Write, Edit
 capabilities:
   - Read and analyze multiple research reports

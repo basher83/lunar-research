@@ -1,0 +1,26 @@
+{
+  "mcpServers": {
+    "deepwiki": {
+      "type": "http",
+      "url": "https://mcp.deepwiki.com/mcp"
+    },
+    "tavily": {
+      "type": "http",
+      "url": "https://mcp.tavily.com/mcp/?tavilyApiKey=${TAVILY_API_KEY}"
+    },
+    "exa": {
+      "type": "http",
+      "url": "https://mcp.exa.ai/mcp?tools=web_search_exa,get_code_context_exa,crawling_exa,deep_researcher_check,deep_researcher_start?exaApiKey=${EXA_API_KEY}"
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${GITHUB_TOKEN}",
+        "X-MCP-Tools": "get_file_contents,search_code,search_repositories,get_repository_tree,list_starred_repositories,get_me",
+        "X-MCP-Readonly": "true",
+        "X-MCP-Lockdown": "false"
+      }
+    }
+  }
+}

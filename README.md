@@ -6,14 +6,11 @@ findings with source authority hierarchy.
 
 ## Installation
 
-```bash
-/plugin install research-pipeline@lunar-research
-```
-
-Or add the marketplace:
+Add the lunar-claude marketplace, then install the plugin:
 
 ```bash
-/plugin marketplace add basher83/lunar-research
+/plugin marketplace add basher83/lunar-claude
+/plugin install lunar-research@lunar-claude
 ```
 
 ## Setup

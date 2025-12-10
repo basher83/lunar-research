@@ -80,4 +80,4 @@ Requires MCP servers configured for:
 
 ## License
 
-See [LICENSE](LICENSE) file.
+See [MIT](LICENSE)

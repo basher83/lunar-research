@@ -5,7 +5,13 @@
   "author": {
     "name": "basher83"
   },
-  "agents": "./agents/",
+  "agents": [
+    "./agents/github-agent.md",
+    "./agents/tavily-agent.md",
+    "./agents/deepwiki-agent.md",
+    "./agents/exa-agent.md",
+    "./agents/synthesizer-agent.md"
+  ],
   "keywords": ["research", "multi-agent", "synthesis", "knowledge-base", "mcp"],
   "repository": "https://github.com/basher83/lunar-research",
   "homepage": "https://github.com/basher83/lunar-research"

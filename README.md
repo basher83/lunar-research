@@ -16,6 +16,41 @@ Or add the marketplace:
 /plugin marketplace add basher83/lunar-research
 ```
 
+## Setup
+
+After installation, configure your API keys. The plugin uses environment variables for authentication.
+
+### Option 1: Shell Profile (Recommended)
+
+Add to `~/.bashrc`, `~/.zshrc`, or your shell's config:
+
+```bash
+export GITHUB_TOKEN="ghp_xxxxxxxxxxxx"
+export TAVILY_API_KEY="tvly-xxxxxxxxxxxx"
+export EXA_API_KEY="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+```
+
+Restart your terminal or run `source ~/.bashrc`.
+
+### Option 2: mise (Project-scoped)
+
+Create `.mise.local.toml` in your project directory:
+
+```toml
+[env]
+GITHUB_TOKEN = "ghp_xxxxxxxxxxxx"
+TAVILY_API_KEY = "tvly-xxxxxxxxxxxx"
+EXA_API_KEY = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+```
+
+Run `mise trust` to activate. The `.local.toml` suffix is gitignored by default.
+
+### Getting API Keys
+
+- **GitHub**: [Create a personal access token](https://github.com/settings/tokens)
+- **Tavily**: [Get API key](https://tavily.com/)
+- **Exa**: [Get API key](https://exa.ai/)
+
 ## Usage
 
 ```bash
@@ -52,7 +87,7 @@ Or add the marketplace:
 
 ### Scripts
 
-- `validate_research_report.py` - Validate reports against schema
+- `validate-research-report.py` - Validate reports against schema
 
 ## Cache Structure
 
@@ -69,14 +104,16 @@ ${CLAUDE_PLUGIN_ROOT}/cache/
     └── synthesis.md
 ```
 
-## Prerequisites
+## MCP Servers
 
-Requires MCP servers configured for:
+The plugin bundles `.mcp.json` with preconfigured MCP servers:
 
-- GitHub (`mcp__github__*`)
-- Tavily (`mcp__tavily__*`)
-- DeepWiki (`mcp__deepwiki__*`)
-- Exa (`mcp__exa__*`)
+| Server | Tools Prefix | Auth |
+|--------|--------------|------|
+| GitHub | `mcp__github__*` | `GITHUB_TOKEN` |
+| Tavily | `mcp__tavily__*` | `TAVILY_API_KEY` |
+| DeepWiki | `mcp__deepwiki__*` | None |
+| Exa | `mcp__exa__*` | `EXA_API_KEY` |
 
 ## License
 

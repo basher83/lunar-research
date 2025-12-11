@@ -1,7 +1,9 @@
-# lunar-research
+# Lunar-Research
 
 Multi-agent research pipeline for Claude Code. Orchestrates 4 specialized researcher agents
 (GitHub, Tavily, DeepWiki, Exa) and synthesizes findings with source authority hierarchy.
+
+![Lunar-Research Components](assets/components-grid.png)
 
 ## Installation
 
@@ -63,6 +65,10 @@ Run `mise trust` to activate. The `.local.toml` suffix is gitignored.
 - **Synthesizer Agent**: Combines findings using authority hierarchy (official docs > community > code > semantic)
 - **Knowledge Base Caching**: 30-day TTL cache shared across projects
 - **Schema Validation**: JSON Schema for standardized report format
+
+## How It Works
+
+<img src="assets/workflow-timeline.png" alt="Query Orchestration Workflow" width="500">
 
 ## Components
 

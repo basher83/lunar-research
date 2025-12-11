@@ -13,4 +13,4 @@ tables = false
 headings = true
 
 [MD033]
-allowed_elements = ["span", "div", "Tip", "example", "commentary"]
+allowed_elements = ["span", "div", "Tip", "example", "commentary", "img"]

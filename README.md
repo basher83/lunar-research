@@ -51,7 +51,9 @@ Run `mise trust` to activate. The `.local.toml` suffix is gitignored.
 ## Usage
 
 ```bash
-/lunar-research "your research query"
+/lunar-research:run "your research query"
+/lunar-research:cache              # List cached research
+/lunar-research:cache --detailed   # Show researcher status
 ```
 
 ## Features
@@ -64,9 +66,12 @@ Run `mise trust` to activate. The `.local.toml` suffix is gitignored.
 
 ## Components
 
-### Command
+### Commands
 
-- `lunar-research` - Main orchestrator command
+| Command | Description |
+|---------|-------------|
+| `/lunar-research:run` | Main research orchestrator |
+| `/lunar-research:cache` | List cached research entries |
 
 ### Agents
 

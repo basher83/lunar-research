@@ -13,14 +13,17 @@ This is a Claude Code plugin that implements a multi-agent research pipeline. It
 uv run scripts/validate-research-report.py <report.json>
 
 # Run the research pipeline (from Claude Code)
-/lunar-research "your query"
+/lunar-research:run "your query"
+
+# List cached research entries
+/lunar-research:cache [--detailed]
 ```
 
 ## Architecture
 
 ### Orchestration Flow
 
-1. **Command** (`/lunar-research`) receives query, checks knowledge base cache
+1. **Command** (`/lunar-research:run`) receives query, checks knowledge base cache
 2. **Phase 1**: Dispatches 4 researcher agents in parallel via Task tool
 3. **Phase 2**: Synthesizer agent combines findings after all researchers complete
 4. **Phase 3**: Orchestrator adds codebase context and updates knowledge base index

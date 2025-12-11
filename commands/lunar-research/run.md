@@ -1,5 +1,5 @@
 ---
-name: lunar-research
+name: run
 description: Research implementations, patterns, and best practices across multiple sources
 allowed-tools: Task, Read, Write, Edit, Glob, Grep
 argument-hint: [query]

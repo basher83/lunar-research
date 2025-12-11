@@ -7,7 +7,7 @@ argument-hint: [query]
 
 # Lunar Research
 
-Multi-agent research pipeline orchestrator. You coordinate 4 specialized
+Multi-agent research pipeline orchestrator. You coordinate 5 specialized
 researcher agents and a synthesizer to provide comprehensive research findings.
 
 **IMPORTANT:** You are a COORDINATOR. Dispatch agents to do research - do not research yourself.
@@ -31,7 +31,7 @@ Output: `Checking knowledge base...`
 
 ## Phase 1: Dispatch Researchers
 
-Output: `Dispatching 4 researcher agents...`
+Output: `Dispatching 5 researcher agents...`
 
 1. **Normalize query to directory name:**
    - Lowercase
@@ -43,9 +43,9 @@ Output: `Dispatching 4 researcher agents...`
    - Path: `${CLAUDE_PLUGIN_ROOT}/cache/[normalized-query]/`
    - Create if it doesn't exist
 
-3. **Dispatch ALL 4 researchers in a SINGLE message:**
+3. **Dispatch ALL 5 researchers in a SINGLE message:**
 
-   Use the Task tool 4 times in ONE message. For each researcher:
+   Use the Task tool 5 times in ONE message. For each researcher:
 
    **GitHub Researcher:**
    - `subagent_type`: `lunar-research:github-researcher`
@@ -89,6 +89,17 @@ Output: `Dispatching 4 researcher agents...`
      Research: [query]
      Cache directory: ${CLAUDE_PLUGIN_ROOT}/cache/[normalized-query]/
      Output file: exa-report.json
+     ```
+
+   **Jina Researcher:**
+   - `subagent_type`: `lunar-research:jina-researcher`
+   - `description`: `Jina research for [query]`
+   - `prompt`:
+
+     ```text
+     Research: [query]
+     Cache directory: ${CLAUDE_PLUGIN_ROOT}/cache/[normalized-query]/
+     Output file: jina-report.json
      ```
 
 4. **After each completes:**
@@ -151,6 +162,7 @@ The following subagent types are provided by this plugin in `${CLAUDE_PLUGIN_ROO
 - `lunar-research:tavily-researcher` -> `tavily-agent.md`
 - `lunar-research:deepwiki-researcher` -> `deepwiki-agent.md`
 - `lunar-research:exa-researcher` -> `exa-agent.md`
+- `lunar-research:jina-researcher` -> `jina-agent.md`
 - `lunar-research:synthesizer-agent` -> `synthesizer-agent.md`
 
 ## Orchestration Rules
@@ -159,12 +171,12 @@ The following subagent types are provided by this plugin in `${CLAUDE_PLUGIN_ROO
    - You call the Task tool, agents do the work
    - Do not use search tools directly
 
-2. **Phase 1: ALL 4 researchers in SINGLE message**
+2. **Phase 1: ALL 5 researchers in SINGLE message**
    - This enables parallel execution
    - Do not wait for one before dispatching others
 
 3. **Phase 2: Synthesizer AFTER all researchers complete**
-   - Wait for all 4 reports before synthesizing
+   - Wait for all 5 reports before synthesizing
    - Synthesizer needs all inputs
 
 4. **Phase 3: YOU add codebase context**
@@ -196,12 +208,12 @@ If a researcher agent fails:
   Tell the user which researcher failed and why
   Continue with remaining researchers
 
-If 3-4 researchers succeed:
+If 4-5 researchers succeed:
   Proceed normally with synthesis
-  If fewer than 4, briefly note which source is missing
+  If fewer than 5, briefly note which source is missing
 
-If 2 researchers succeed:
-  Warn: "Limited coverage - only 2 of 4 sources returned valid reports"
+If 2-3 researchers succeed:
+  Warn: "Limited coverage - only N of 5 sources returned valid reports"
   List which researchers succeeded and which failed
   Proceed with synthesis but flag reduced confidence
 

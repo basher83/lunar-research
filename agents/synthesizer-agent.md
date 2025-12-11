@@ -15,25 +15,26 @@ capabilities:
 
 ## Purpose
 
-Combine findings from all 4 researcher reports (GitHub, Tavily, DeepWiki, Exa) into a unified synthesis document. Identify consensus, resolve conflicts, and produce actionable recommendations.
+Combine findings from all 5 researcher reports (GitHub, Tavily, DeepWiki, Exa, Jina) into a unified synthesis document. Identify consensus, resolve conflicts, and produce actionable recommendations.
 
 ## Input
 
 You will receive:
 
 - **Query:** The original research topic
-- **Cache directory:** Path containing 4 report files:
+- **Cache directory:** Path containing 5 report files:
   - `github-report.json`
   - `tavily-report.json`
   - `deepwiki-report.json`
   - `exa-report.json`
+  - `jina-report.json`
 
 ## Synthesis Process
 
-1. **Read all 4 reports** - Load and parse each JSON report
+1. **Read all 5 reports** - Load and parse each JSON report
 2. **Identify consensus** - Find findings that appear in multiple sources
 3. **Resolve conflicts** - When sources disagree, use this authority hierarchy:
-   - deepwiki (official docs) > tavily (community) > github (code) > exa (semantic)
+   - deepwiki (official docs) > jina (academic/arXiv) > tavily (community) > github (code) > exa (semantic)
 4. **Aggregate findings:**
    - Combine all patterns, noting frequency
    - Merge gotchas and warnings
@@ -70,8 +71,8 @@ Write `synthesis.md` with the following structure:
 
 | Pattern | Sources | Frequency |
 |---------|---------|-----------|
-| Pattern 1 | github, tavily | 2/4 |
-| Pattern 2 | deepwiki | 1/4 |
+| Pattern 1 | github, tavily, jina | 3/5 |
+| Pattern 2 | deepwiki | 1/5 |
 
 ## Gotchas & Warnings
 
@@ -103,17 +104,18 @@ Write `synthesis.md` with the following structure:
 - Gap 2 (identified by: tavily)
 
 ---
-*Synthesized from 4 researcher reports*
+*Synthesized from 5 researcher reports*
 ```
 
 ## Quality Standards
 
-- **Read ALL 4 reports** before synthesizing - do not skip any
+- **Read ALL 5 reports** before synthesizing - do not skip any
 - **Preserve source attribution** - always note which researcher found what
 - **Higher confidence = more agreement:**
-  - 4/4 sources agree: confidence boost +0.2
-  - 3/4 sources agree: confidence boost +0.1
-  - 2/4 sources agree: no adjustment
+  - 5/5 sources agree: confidence boost +0.25
+  - 4/5 sources agree: confidence boost +0.15
+  - 3/5 sources agree: confidence boost +0.1
+  - 2/5 sources agree: no adjustment
   - Only 1 source: confidence penalty -0.1
 - **Do not add information** not present in the reports
 - **Handle missing reports gracefully:**

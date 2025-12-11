@@ -1,8 +1,7 @@
 # lunar-research
 
 Multi-agent research pipeline for Claude Code. Orchestrates 4 specialized researcher agents
-(GitHub, Tavily, DeepWiki, Exa) to gather information from multiple sources, then synthesizes
-findings with source authority hierarchy.
+(GitHub, Tavily, DeepWiki, Exa) and synthesizes findings with source authority hierarchy.
 
 ## Installation
 
@@ -28,7 +27,7 @@ export TAVILY_API_KEY="tvly-xxxxxxxxxxxx"
 export EXA_API_KEY="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 ```
 
-Restart your terminal or run `source ~/.bashrc`.
+Run `source ~/.bashrc` or restart your terminal.
 
 ### Option 2: mise (Project-scoped)
 
@@ -41,7 +40,7 @@ TAVILY_API_KEY = "tvly-xxxxxxxxxxxx"
 EXA_API_KEY = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 ```
 
-Run `mise trust` to activate. The `.local.toml` suffix is gitignored by default.
+Run `mise trust` to activate. The `.local.toml` suffix is gitignored.
 
 ### Getting API Keys
 
@@ -86,7 +85,7 @@ Run `mise trust` to activate. The `.local.toml` suffix is gitignored by default.
 ### Scripts
 
 - `validate-research-report.py` - Validate reports against schema
-- `setup-mcp-keys.sh` - Manual API key configuration (if hook fails)
+- `setup-mcp-keys.sh` - API key configuration (if hook fails)
 
 ### Hooks
 
@@ -95,7 +94,7 @@ Run `mise trust` to activate. The `.local.toml` suffix is gitignored by default.
 
 ## Cache Structure
 
-Research results are cached at plugin level, shared across all projects:
+The plugin caches research results and shares them across projects:
 
 ```text
 ${CLAUDE_PLUGIN_ROOT}/cache/
@@ -110,7 +109,7 @@ ${CLAUDE_PLUGIN_ROOT}/cache/
 
 ## MCP Servers
 
-The plugin provides four MCP servers. The SessionStart hook injects API keys on each session.
+The plugin provides four MCP servers (configured by the SessionStart hook):
 
 | Server | Tools Prefix | Auth |
 |--------|--------------|------|

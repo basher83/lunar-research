@@ -19,7 +19,7 @@ import json
 import sys
 from pathlib import Path
 
-from jsonschema import ValidationError, validate
+from jsonschema import Draft7Validator
 
 SCHEMA_PATH = Path(__file__).parent.parent / "schemas" / "research-report.schema.json"
 
@@ -52,20 +52,24 @@ def validate_report(report_path: str) -> bool:
         print(f"  Parse error at line {e.lineno}, column {e.colno}: {e.msg}")
         return False
 
-    try:
-        validate(instance=report, schema=schema)
+    # Collect ALL validation errors instead of failing fast
+    validator = Draft7Validator(schema)
+    errors = list(validator.iter_errors(report))
+
+    if not errors:
         print(f"Valid: {report['researcher']} report")
         print(f"  Confidence: {report['confidence']}")
         print(f"  Sources: {len(report['sources'])}")
         print(f"  Tags: {report['tags']}")
         return True
-    except ValidationError as e:
-        print("ERROR: Schema validation failed")
+
+    print(f"ERROR: Schema validation failed ({len(errors)} error(s))")
+    for i, e in enumerate(errors, 1):
         if e.absolute_path:
             path = ".".join(str(p) for p in e.absolute_path)
-            print(f"  Location: {path}")
-        print(f"  Error: {e.message}")
-        return False
+            print(f"  [{i}] Location: {path}")
+        print(f"      Error: {e.message}")
+    return False
 
 
 if __name__ == "__main__":

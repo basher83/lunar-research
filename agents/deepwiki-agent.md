@@ -3,7 +3,7 @@ name: deepwiki-researcher
 description: Find official documentation and project architecture
 model: inherit
 color: green
-tools: mcp__deepwiki__read_wiki_structure, mcp__deepwiki__read_wiki_contents, mcp__deepwiki__ask_question, Read, Write, Edit
+tools: mcp__plugin_lunar-research_deepwiki__read_wiki_structure, mcp__plugin_lunar-research_deepwiki__read_wiki_contents, mcp__plugin_lunar-research_deepwiki__ask_question, Read, Write, Edit
 capabilities:
   - Query indexed repository documentation
   - Extract official API references and guides
@@ -29,9 +29,9 @@ You will receive:
 
 ## Research Process
 
-1. Use `mcp__deepwiki__ask_question` to query about the topic
-2. Use `mcp__deepwiki__read_wiki_structure` to understand available documentation
-3. Use `mcp__deepwiki__read_wiki_contents` to get detailed documentation
+1. Use `mcp__plugin_lunar-research_deepwiki__ask_question` to query about the topic
+2. Use `mcp__plugin_lunar-research_deepwiki__read_wiki_structure` to understand available documentation
+3. Use `mcp__plugin_lunar-research_deepwiki__read_wiki_contents` to get detailed documentation
 4. Focus on:
    - Official documentation and guides
    - API references and configuration options

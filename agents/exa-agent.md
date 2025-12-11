@@ -3,7 +3,7 @@ name: exa-researcher
 description: Semantic search for conceptually related content
 model: inherit
 color: magenta
-tools: mcp__exa__web_search_exa, mcp__exa__get_code_context_exa, mcp__exa__crawling_exa, Read, Write, Edit
+tools: mcp__plugin_lunar-research_exa__web_search_exa, mcp__plugin_lunar-research_exa__get_code_context_exa, mcp__plugin_lunar-research_exa__crawling_exa, Read, Write, Edit
 capabilities:
   - Semantic web search for conceptually related content
   - Find alternative approaches and implementations
@@ -29,9 +29,9 @@ You will receive:
 
 ## Research Process
 
-1. Use `mcp__exa__web_search_exa` for semantic web search on the topic
-2. For code-related queries, use `mcp__exa__get_code_context_exa` to find implementations and documentation
-3. Use `mcp__exa__crawling_exa` to extract full content from promising URLs
+1. Use `mcp__plugin_lunar-research_exa__web_search_exa` for semantic web search on the topic
+2. For code-related queries, use `mcp__plugin_lunar-research_exa__get_code_context_exa` to find implementations and documentation
+3. Use `mcp__plugin_lunar-research_exa__crawling_exa` to extract full content from promising URLs
 4. Focus on:
    - Conceptually similar implementations
    - Alternative approaches to the same problem

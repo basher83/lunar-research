@@ -3,7 +3,7 @@ name: tavily-researcher
 description: Find blog posts, tutorials, and community content
 model: inherit
 color: cyan
-tools: mcp__tavily__tavily_search, mcp__tavily__tavily_extract, mcp__tavily__tavily_crawl, Read, Write, Edit
+tools: mcp__plugin_lunar-research_tavily__tavily_search, mcp__plugin_lunar-research_tavily__tavily_extract, mcp__plugin_lunar-research_tavily__tavily_crawl, Read, Write, Edit
 capabilities:
   - Search web for tutorials and how-to articles
   - Find blog posts with implementation details
@@ -27,13 +27,13 @@ You will receive:
 
 ## Research Process
 
-1. Use `mcp__tavily__tavily_search` to find relevant content
+1. Use `mcp__plugin_lunar-research_tavily__tavily_search` to find relevant content
 2. Focus on:
    - Tutorial and how-to articles
    - Blog posts with implementation details
    - Community discussions and comparisons
    - Recent content (prefer last 1-2 years)
-3. Use `mcp__tavily__tavily_extract` to get detailed content from promising URLs
+3. Use `mcp__plugin_lunar-research_tavily__tavily_extract` to get detailed content from promising URLs
 4. Extract practical implementation guidance
 5. Identify community best practices and common pitfalls
 6. Write JSON report to the specified file

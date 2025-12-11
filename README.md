@@ -15,7 +15,8 @@ Add the lunar-claude marketplace, then install the plugin:
 
 ## Setup
 
-After installation, configure your API keys. The plugin uses environment variables for authentication.
+Set your API keys as environment variables. A SessionStart hook substitutes them into the
+MCP configuration automatically.
 
 ### Option 1: Shell Profile (Recommended)
 
@@ -85,6 +86,12 @@ Run `mise trust` to activate. The `.local.toml` suffix is gitignored by default.
 ### Scripts
 
 - `validate-research-report.py` - Validate reports against schema
+- `setup-mcp-keys.sh` - Manual API key configuration (if hook fails)
+
+### Hooks
+
+- `SessionStart` - Substitutes API keys from environment variables into `.mcp.json` on each
+  session start. Run `/mcp` to reconnect if keys change mid-session.
 
 ## Cache Structure
 
@@ -103,14 +110,14 @@ ${CLAUDE_PLUGIN_ROOT}/cache/
 
 ## MCP Servers
 
-The plugin bundles `.mcp.json` with preconfigured MCP servers:
+The plugin provides four MCP servers. The SessionStart hook injects API keys on each session.
 
 | Server | Tools Prefix | Auth |
 |--------|--------------|------|
-| GitHub | `mcp__github__*` | `GITHUB_TOKEN` |
-| Tavily | `mcp__tavily__*` | `TAVILY_API_KEY` |
-| DeepWiki | `mcp__deepwiki__*` | None |
-| Exa | `mcp__exa__*` | `EXA_API_KEY` |
+| GitHub | `mcp__plugin_lunar-research_github__*` | `GITHUB_TOKEN` |
+| Tavily | `mcp__plugin_lunar-research_tavily__*` | `TAVILY_API_KEY` |
+| DeepWiki | `mcp__plugin_lunar-research_deepwiki__*` | None |
+| Exa | `mcp__plugin_lunar-research_exa__*` | `EXA_API_KEY` |
 
 ## License
 

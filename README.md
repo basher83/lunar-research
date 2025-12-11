@@ -52,7 +52,7 @@ Run `mise trust` to activate. The `.local.toml` suffix is gitignored by default.
 ## Usage
 
 ```bash
-/research-pipeline:lunar-research "your research query"
+/lunar-research "your research query"
 ```
 
 ## Features

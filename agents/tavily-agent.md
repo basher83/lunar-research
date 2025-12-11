@@ -44,6 +44,12 @@ Write a JSON file matching `${CLAUDE_PLUGIN_ROOT}/schemas/research-report.schema
 
 Set `"researcher": "tavily"` in your output.
 
+**Required enum values (MUST use exactly these):**
+- `source.type`: `"repository"` | `"article"` | `"documentation"` | `"discussion"` | `"paper"`
+- `source.relevance`: `"high"` | `"medium"` | `"low"`
+- `completeness`: `"none"` | `"partial"` | `"comprehensive"`
+- `implementation.maturity`: `"experimental"` | `"beta"` | `"production"`
+
 Example structure:
 
 ```json

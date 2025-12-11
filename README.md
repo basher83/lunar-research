@@ -1,7 +1,7 @@
 # Lunar-Research
 
-Multi-agent research pipeline for Claude Code. Orchestrates 4 specialized researcher agents
-(GitHub, Tavily, DeepWiki, Exa) and synthesizes findings with source authority hierarchy.
+Multi-agent research pipeline for Claude Code. Orchestrates 5 specialized researcher agents
+(GitHub, Tavily, DeepWiki, Exa, Jina) and synthesizes findings with source authority hierarchy.
 
 ![Lunar-Research Components](assets/components-grid.png)
 
@@ -60,9 +60,10 @@ Run `mise trust` to activate. The `.local.toml` suffix is gitignored.
 
 ## Features
 
-- **4 Parallel Researchers**: GitHub (code/repos), Tavily (web/tutorials), DeepWiki (official docs),
-  Exa (semantic search)
-- **Synthesizer Agent**: Combines findings using authority hierarchy (official docs > community > code > semantic)
+- **5 Parallel Researchers**: GitHub (code/repos), Tavily (web/tutorials), DeepWiki (official docs),
+  Exa (semantic search), Jina (web/arXiv)
+- **Synthesizer Agent**: Combines findings using authority hierarchy
+  (official docs > academic > community > code > semantic)
 - **Knowledge Base Caching**: 30-day TTL cache shared across projects
 - **Schema Validation**: JSON Schema for standardized report format
 
@@ -87,6 +88,7 @@ Run `mise trust` to activate. The `.local.toml` suffix is gitignored.
 | `tavily-researcher` | Find tutorials and community content | Tavily MCP |
 | `deepwiki-researcher` | Find official documentation | DeepWiki MCP |
 | `exa-researcher` | Semantic search for related content | Exa MCP |
+| `jina-researcher` | Search web and arXiv for academic content | Jina MCP |
 | `synthesizer-agent` | Combine findings into synthesis | None |
 
 ### Schemas
@@ -115,6 +117,7 @@ ${CLAUDE_PLUGIN_ROOT}/cache/
     ├── tavily-report.json
     ├── deepwiki-report.json
     ├── exa-report.json
+    ├── jina-report.json
     └── synthesis.md
 ```
 
@@ -128,6 +131,8 @@ The plugin provides four MCP servers (configured by the SessionStart hook):
 | Tavily | `mcp__plugin_lunar-research_tavily__*` | `TAVILY_API_KEY` |
 | DeepWiki | `mcp__plugin_lunar-research_deepwiki__*` | None |
 | Exa | `mcp__plugin_lunar-research_exa__*` | `EXA_API_KEY` |
+
+The Jina researcher uses a globally configured Jina MCP server (`mcp__jina__*` tools).
 
 ## License
 

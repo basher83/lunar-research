@@ -173,6 +173,25 @@ The following subagent types are provided by this plugin in `${CLAUDE_PLUGIN_ROO
 
 ## Error Handling
 
+### Common Failure Diagnosis
+
+**HTTP 401 Unauthorized (Tavily/Exa):**
+- Root cause: API key environment variable not set
+- Check: Verify `TAVILY_API_KEY` or `EXA_API_KEY` is exported in shell
+- Fix: `export TAVILY_API_KEY=your_key` before starting Claude Code
+
+**Schema Validation Failed:**
+- Root cause: Agent used invalid enum value (e.g., "tool" instead of "article")
+- The allowed values are documented in each agent's "Required enum values" section
+- If this persists, the agent instructions may need updating
+
+**Report confidence = 0.0:**
+- Indicates API failure, not lack of results
+- Check the `gaps` field for error details
+- Consider excluding from synthesis
+
+### Recovery Steps
+
 If a researcher agent fails:
   Tell the user which researcher failed and why
   Continue with remaining researchers

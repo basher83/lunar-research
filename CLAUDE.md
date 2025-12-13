@@ -39,7 +39,7 @@ Each researcher uses plugin-scoped MCP tools:
 - `mcp__plugin_lunar-research_tavily__*`
 - `mcp__plugin_lunar-research_deepwiki__*`
 - `mcp__plugin_lunar-research_exa__*`
-- `mcp__jina__*` (global MCP server)
+- `mcp__plugin_lunar-research_jina__*`
 
 ### Cache Structure
 

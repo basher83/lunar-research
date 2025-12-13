@@ -1,5 +1,33 @@
-# Changelog
+## [1.1.0] - 2025-12-13
 
+### 🚀 Features
+
+- *(commands)* Add cache listing and namespace commands
+- *(agents)* Add Jina researcher agent
+- *(schema)* Add jina to researcher enum
+- *(orchestration)* Integrate Jina researcher
+- *(config)* Add Jina SSE configuration and update plugin version
+- *(validation)* Add JINA_API_KEY validation to setup scripts
+
+### 🐛 Bug Fixes
+
+- *(commands)* Move commands to root for proper plugin namespacing
+- *(mcp)* Update Jina SSE URL to include additional query parameters
+
+### 📚 Documentation
+
+- Add architecture infographics to README
+- Add Gemini-specific documentation
+- Update README and CLAUDE for 5 researchers
+- Add JINA_API_KEY to all documentation
+
+### 🎨 Styling
+
+- Add trailing newlines to JSON files
+
+### ⚙️ Miscellaneous Tasks
+
+- *(plugin)* Bump version to 1.0.2 in plugin.json
 ## [1.0.0] - 2025-12-11
 
 ### 🚀 Features
@@ -38,3 +66,4 @@
 
 - Add `mise` for project tooling, `pre-commit` hooks for code quality, and `git-cliff` for changelog generation.
 - Add *.local.md pattern to gitignore
+- *(release)* Prepare v1.0.0

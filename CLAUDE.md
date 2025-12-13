@@ -43,10 +43,12 @@ Each researcher uses plugin-scoped MCP tools:
 
 ### Cache Structure
 
+Research cache is stored outside the versioned plugin directory to persist across version upgrades:
+
 ```
-${CLAUDE_PLUGIN_ROOT}/cache/
-├── index.json                    # Knowledge base index (tracked)
-└── [normalized-query]/           # Per-query cache (gitignored)
+~/.claude/research-cache/lunar-research/
+├── index.json                    # Knowledge base index
+└── [normalized-query]/           # Per-query cache
     ├── github-report.json
     ├── tavily-report.json
     ├── deepwiki-report.json

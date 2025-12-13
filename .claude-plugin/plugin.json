@@ -1,6 +1,6 @@
 {
   "name": "lunar-research",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Multi-agent research pipeline with parallel researchers and synthesis",
   "author": {
     "name": "basher83"

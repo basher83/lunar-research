@@ -13,7 +13,7 @@ List entries in the research knowledge base cache.
 
 ## Instructions
 
-1. Read the cache index: `${CLAUDE_PLUGIN_ROOT}/cache/index.json`
+1. Read the cache index: `${HOME}/.claude/research-cache/lunar-research/index.json`
 
 2. If index is empty or missing, output:
    ```
@@ -35,7 +35,7 @@ List entries in the research knowledge base cache.
 
 5. **Detailed view (when `--detailed` flag present in arguments):**
 
-   For each entry, read the report files in `${CLAUDE_PLUGIN_ROOT}/cache/[normalizedQuery]/`:
+   For each entry, read the report files in `${HOME}/.claude/research-cache/lunar-research/[normalizedQuery]/`:
    - `github-report.json`
    - `tavily-report.json`
    - `deepwiki-report.json`
@@ -63,4 +63,4 @@ List entries in the research knowledge base cache.
 - Use ✗ for failed researchers (file missing or confidence = 0)
 - Date format: YYYY-MM-DD (extracted from timestamp)
 - Truncate long query names to fit table width
-- Cache location: `${CLAUDE_PLUGIN_ROOT}/cache/`
+- Cache location: `${HOME}/.claude/research-cache/lunar-research/`

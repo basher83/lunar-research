@@ -16,7 +16,7 @@ researcher agents and a synthesizer to provide comprehensive research findings.
 
 Output: `Checking knowledge base...`
 
-1. Read `${CLAUDE_PLUGIN_ROOT}/cache/index.json`
+1. Read `${HOME}/.claude/research-cache/lunar-research/index.json`
 2. Search for entries matching the query (fuzzy match on query and tags)
 3. Check if any matching entry is less than 30 days old
 
@@ -40,7 +40,7 @@ Output: `Dispatching 5 researcher agents...`
    - Example: "Python CLI best practices" -> "python-cli-best-practices"
 
 2. **Create cache directory:**
-   - Path: `${CLAUDE_PLUGIN_ROOT}/cache/[normalized-query]/`
+   - Path: `${HOME}/.claude/research-cache/lunar-research/[normalized-query]/`
    - Create if it doesn't exist
 
 3. **Dispatch ALL 5 researchers in a SINGLE message:**
@@ -54,7 +54,7 @@ Output: `Dispatching 5 researcher agents...`
 
      ```text
      Research: [query]
-     Cache directory: ${CLAUDE_PLUGIN_ROOT}/cache/[normalized-query]/
+     Cache directory: ${HOME}/.claude/research-cache/lunar-research/[normalized-query]/
      Output file: github-report.json
      ```
 
@@ -65,7 +65,7 @@ Output: `Dispatching 5 researcher agents...`
 
      ```text
      Research: [query]
-     Cache directory: ${CLAUDE_PLUGIN_ROOT}/cache/[normalized-query]/
+     Cache directory: ${HOME}/.claude/research-cache/lunar-research/[normalized-query]/
      Output file: tavily-report.json
      ```
 
@@ -76,7 +76,7 @@ Output: `Dispatching 5 researcher agents...`
 
      ```text
      Research: [query]
-     Cache directory: ${CLAUDE_PLUGIN_ROOT}/cache/[normalized-query]/
+     Cache directory: ${HOME}/.claude/research-cache/lunar-research/[normalized-query]/
      Output file: deepwiki-report.json
      ```
 
@@ -87,7 +87,7 @@ Output: `Dispatching 5 researcher agents...`
 
      ```text
      Research: [query]
-     Cache directory: ${CLAUDE_PLUGIN_ROOT}/cache/[normalized-query]/
+     Cache directory: ${HOME}/.claude/research-cache/lunar-research/[normalized-query]/
      Output file: exa-report.json
      ```
 
@@ -98,7 +98,7 @@ Output: `Dispatching 5 researcher agents...`
 
      ```text
      Research: [query]
-     Cache directory: ${CLAUDE_PLUGIN_ROOT}/cache/[normalized-query]/
+     Cache directory: ${HOME}/.claude/research-cache/lunar-research/[normalized-query]/
      Output file: jina-report.json
      ```
 
@@ -119,7 +119,7 @@ Output: `Synthesizing findings...`
 
      ```text
      Query: [query]
-     Cache directory: ${CLAUDE_PLUGIN_ROOT}/cache/[normalized-query]/
+     Cache directory: ${HOME}/.claude/research-cache/lunar-research/[normalized-query]/
      ```
 
 2. Output: `Synthesis complete`
@@ -128,7 +128,7 @@ Output: `Synthesizing findings...`
 
 Output: `Adding codebase context...`
 
-1. **Read synthesis:** Load `${CLAUDE_PLUGIN_ROOT}/cache/[normalized-query]/synthesis.md`
+1. **Read synthesis:** Load `${HOME}/.claude/research-cache/lunar-research/[normalized-query]/synthesis.md`
 
 2. **Check for related patterns in codebase:**
    - Search `plugins/` for related implementations
@@ -136,14 +136,14 @@ Output: `Adding codebase context...`
    - Note any relevant existing infrastructure
 
 3. **Update knowledge base index:**
-   - Add entry to `${CLAUDE_PLUGIN_ROOT}/cache/index.json`:
+   - Add entry to `${HOME}/.claude/research-cache/lunar-research/index.json`:
 
    ```json
    {
      "query": "[original query]",
      "normalizedQuery": "[normalized-query]",
      "timestamp": "[ISO timestamp]",
-     "path": "${CLAUDE_PLUGIN_ROOT}/cache/[normalized-query]/",
+     "path": "${HOME}/.claude/research-cache/lunar-research/[normalized-query]/",
      "tags": ["extracted", "from", "synthesis"],
      "confidence": [from synthesis]
    }

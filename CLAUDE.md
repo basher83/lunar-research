@@ -30,7 +30,7 @@ uv run scripts/validate-research-report.py <report.json>
 
 ### Agent Authority Hierarchy (for conflict resolution)
 
-deepwiki (official docs) > jina (academic/arXiv) > tavily (community) > github (code) > exa (semantic)
+deepwiki (official docs) > tavily (community) > jina (web search) > github (code) > exa (semantic)
 
 ### MCP Tool Prefixes
 

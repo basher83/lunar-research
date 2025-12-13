@@ -7,6 +7,7 @@
 # Required environment variables:
 #   TAVILY_API_KEY  - Tavily API key
 #   EXA_API_KEY     - Exa API key
+#   JINA_API_KEY    - Jina API key
 #   GITHUB_TOKEN    - GitHub token (optional, uses gh auth if available)
 
 set -euo pipefail
@@ -33,6 +34,7 @@ fi
 missing=()
 [[ -z "${TAVILY_API_KEY:-}" ]] && missing+=("TAVILY_API_KEY")
 [[ -z "${EXA_API_KEY:-}" ]] && missing+=("EXA_API_KEY")
+[[ -z "${JINA_API_KEY:-}" ]] && missing+=("JINA_API_KEY")
 [[ -z "${GITHUB_TOKEN:-}" ]] && missing+=("GITHUB_TOKEN")
 
 # Substitute environment variables

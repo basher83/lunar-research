@@ -7,6 +7,7 @@
 # Required environment variables:
 #   TAVILY_API_KEY  - Your Tavily API key
 #   EXA_API_KEY     - Your Exa API key
+#   JINA_API_KEY    - Your Jina API key
 #   GITHUB_TOKEN    - Your GitHub token (optional, uses gh auth if available)
 #
 # Run this after installing/updating the lunar-research plugin.
@@ -41,6 +42,12 @@ if [[ -z "${EXA_API_KEY:-}" ]]; then
     missing+=("EXA_API_KEY")
 else
     echo -e "${GREEN}✓${NC} EXA_API_KEY is set"
+fi
+
+if [[ -z "${JINA_API_KEY:-}" ]]; then
+    missing+=("JINA_API_KEY")
+else
+    echo -e "${GREEN}✓${NC} JINA_API_KEY is set"
 fi
 
 # GitHub token - try gh auth as fallback

@@ -23,6 +23,7 @@ This project uses `mise` for tool management and `uv` for Python dependency mana
     *   `GITHUB_TOKEN`
     *   `TAVILY_API_KEY`
     *   `EXA_API_KEY`
+    *   `JINA_API_KEY`
 
     These are injected into the MCP configuration (`.mcp.json`) via session hooks.
 

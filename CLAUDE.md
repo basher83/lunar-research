@@ -65,4 +65,4 @@ All researcher reports must conform to `schemas/research-report.schema.json`. Th
 
 ### SessionStart Hook
 
-The hook in `hooks/setup-mcp-keys.sh` substitutes environment variables (`GITHUB_TOKEN`, `TAVILY_API_KEY`, `EXA_API_KEY`) into `.mcp.json` at session start. Run `/mcp` to reconnect if keys change mid-session.
+The hook in `hooks/setup-mcp-keys.sh` substitutes environment variables (`GITHUB_TOKEN`, `TAVILY_API_KEY`, `EXA_API_KEY`, `JINA_API_KEY`) into `.mcp.json` at session start. Run `/mcp` to reconnect if keys change mid-session.

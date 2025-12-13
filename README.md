@@ -27,6 +27,7 @@ Add to `~/.bashrc`, `~/.zshrc`, or your shell's config:
 export GITHUB_TOKEN="ghp_xxxxxxxxxxxx"
 export TAVILY_API_KEY="tvly-xxxxxxxxxxxx"
 export EXA_API_KEY="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+export JINA_API_KEY="jina_xxxxxxxxxxxx"
 ```
 
 Run `source ~/.bashrc` or restart your terminal.
@@ -40,6 +41,7 @@ Create `.mise.local.toml` in your project directory:
 GITHUB_TOKEN = "ghp_xxxxxxxxxxxx"
 TAVILY_API_KEY = "tvly-xxxxxxxxxxxx"
 EXA_API_KEY = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+JINA_API_KEY = "jina_xxxxxxxxxxxx"
 ```
 
 Run `mise trust` to activate. The `.local.toml` suffix is gitignored.
@@ -49,6 +51,7 @@ Run `mise trust` to activate. The `.local.toml` suffix is gitignored.
 - **GitHub**: [Create a personal access token](https://github.com/settings/tokens)
 - **Tavily**: [Get API key](https://tavily.com/)
 - **Exa**: [Get API key](https://exa.ai/)
+- **Jina**: [Get API key](https://jina.ai/)
 
 ## Usage
 
@@ -123,7 +126,7 @@ ${CLAUDE_PLUGIN_ROOT}/cache/
 
 ## MCP Servers
 
-The plugin provides four MCP servers (configured by the SessionStart hook):
+The plugin provides five MCP servers (configured by the SessionStart hook):
 
 | Server | Tools Prefix | Auth |
 |--------|--------------|------|
@@ -131,8 +134,7 @@ The plugin provides four MCP servers (configured by the SessionStart hook):
 | Tavily | `mcp__plugin_lunar-research_tavily__*` | `TAVILY_API_KEY` |
 | DeepWiki | `mcp__plugin_lunar-research_deepwiki__*` | None |
 | Exa | `mcp__plugin_lunar-research_exa__*` | `EXA_API_KEY` |
-
-The Jina researcher uses a globally configured Jina MCP server (`mcp__jina__*` tools).
+| Jina | `mcp__plugin_lunar-research_jina__*` | `JINA_API_KEY` |
 
 ## License
 

@@ -187,9 +187,9 @@ The following subagent types are provided by this plugin in `${CLAUDE_PLUGIN_ROO
 
 ### Common Failure Diagnosis
 
-**HTTP 401 Unauthorized (Tavily/Exa):**
+**HTTP 401 Unauthorized (Tavily/Exa/Jina):**
 - Root cause: API key environment variable not set
-- Check: Verify `TAVILY_API_KEY` or `EXA_API_KEY` is exported in shell
+- Check: Verify `TAVILY_API_KEY`, `EXA_API_KEY`, or `JINA_API_KEY` is exported in shell
 - Fix: `export TAVILY_API_KEY=your_key` before starting Claude Code
 
 **Schema Validation Failed:**

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# SessionStart hook: Auto-substitute API keys in .mcp.json
+# SessionStart hook: Auto-substitute API keys in .mcp.json and migrate cache
 #
 # This hook runs at session start and ensures MCP API keys are properly
 # configured by substituting environment variables into the cached .mcp.json
@@ -12,6 +12,21 @@
 
 set -euo pipefail
 
+# --- Cache Migration ---
+# Migrate cache from versioned plugin directory to persistent location
+CACHE_DIR="${HOME}/.claude/research-cache/lunar-research"
+OLD_CACHE="${CLAUDE_PLUGIN_ROOT}/cache"
+
+if [[ ! -d "$CACHE_DIR" ]]; then
+    mkdir -p "$CACHE_DIR"
+    # Check for cache in old versioned location
+    if [[ -d "$OLD_CACHE" && -f "$OLD_CACHE/index.json" ]]; then
+        cp -r "$OLD_CACHE"/* "$CACHE_DIR/" 2>/dev/null || true
+        echo "lunar-research: Migrated cache to persistent location"
+    fi
+fi
+
+# --- MCP Key Substitution ---
 MCP_FILE="${CLAUDE_PLUGIN_ROOT}/.mcp.json"
 
 # Exit silently if no .mcp.json
